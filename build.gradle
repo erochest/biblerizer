@@ -1,9 +1,14 @@
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.bibler.biblerizer.Main'
 
 repositories {
     jcenter()
 }
 
 dependencies {
+    compile 'com.sun.xml.bind:jaxb-impl:2.2.11'
 }
+

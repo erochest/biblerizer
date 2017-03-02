@@ -228,8 +228,14 @@ public class Map implements Runnable {
     public Image getImage(Tile t) {
 
         Image ret = null;
+        String url = "http://dev.virtualearth.net/REST/v1/Imagery/Map/Aerial/"
+            + t.x + "," + t.y + "/"
+            + curZoom + "/"
+            + "&format=jpeg"
+            + "&key=AozBteKhpdAaLf20ql4_MDxo4BZ1Y3WWnT_ckiSiL2oVhPcCwkUoS2rBAtR77iPZ";
+        java.lang.System.out.println("GETTING <" + url + "> for " + t.toString() + "\n");
         try {
-            URL temp = new URL("http://otile1.mqcdn.com/tiles/1.0.0/" + mapType +"/" + curZoom + "/" + (t.x) + "/" + (t.y) + ".jpg");
+            URL temp = new URL(url);
             ret = ImageIO.read(temp);
         } catch(IOException e) {}
         return ret;
@@ -276,6 +282,11 @@ public class Map implements Runnable {
             x = xVal;
             y = yVal;
             z = zVal;
+        }
+
+        @Override
+        public String toString() {
+            return "<Tile (" + this.x + "," + this.y + "," + this.z + ")>";
         }
     }
 }

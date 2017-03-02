@@ -55,7 +55,7 @@ public class HTMLGenerator extends BaseObject {
          								"target: \'map\', " +
          								"layers: [ " +
          								         "new ol.layer.Tile({ " +
-         								        	 "source: new ol.source.MapQuest({layer: \'sat\'}), " +
+         								        	 "source: new ol.source.BindMaps({key: \"AozBteKhpdAaLf20ql4_MDxo4BZ1Y3WWnT_ckiSiL2oVhPcCwkUoS2rBAtR77iPZ\", imagerySet: \'Aerial\'}), " +
          								             "extent: ol.proj.transformExtent([-180, -90, 180, 90], \'EPSG:4326\', \'EPSG:3857\') " +
          								        	 "}), " +
                         
